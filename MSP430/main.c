@@ -42,8 +42,10 @@ int read_from_csv(FILE *fp, int n, image img) {
 	ptr++; // hmm
 
 	//if (DEBUG) printf("Reading line digits:\n");
-	for (int r = 0; r < n; r++){
-		for (int c = 0; c < n; c++) {
+	int r =0;
+	for (r = 0; r < n; r++){
+		int c =0;
+		for (c = 0; c < n; c++) {
 			uint8 found = atoi(ptr);
 			img[r][c] = found;
 			//if (DEBUG) printf("%d. ", found);
@@ -145,7 +147,8 @@ int main()
 
 	int correct = 0;
 	int num_to_test = 250;
-	for (int i = 0; i < num_to_test; i++) { // test 100 images
+	int i =0;
+	for (i = 0; i < num_to_test; i++) { // test 100 images
 		image img;
 		int test_label = read_from_csv(csv, 28, img); // returns label
 		if (test_label < 0) {
